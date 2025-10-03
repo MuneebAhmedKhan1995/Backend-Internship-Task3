@@ -17,7 +17,7 @@ export const addInventoryItem = async (req, res) => {
             createdAt: new Date()
         };
 
-        const response = await inventoryCollection().insertOne(inventoryItem);
+        const response = await inventoryCollection.insertOne(inventoryItem); 
         res.status(201).json({ 
             message: "Inventory item added successfully", 
             id: response.insertedId 
